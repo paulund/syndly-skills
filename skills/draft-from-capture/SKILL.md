@@ -1,5 +1,5 @@
 ---
-name: syndly:draft
+name: syndly-draft
 description: Draft a post from a capture using your brand voice profile and the target platform voice.
 ---
 
@@ -7,12 +7,12 @@ description: Draft a post from a capture using your brand voice profile and the 
 
 End-to-end drafting flow: pick a capture, ask for the user's angle, draft the post using the brand voice and the target platform voice, get explicit approval, then enqueue or schedule on the chosen channel.
 
-This is the only skill that requires both of the local voice files (`brand-voice.md` and the platform-specific profile). If either is missing, abort and tell the user to run `/syndly:setup` first.
+This is the only skill that requires both of the local voice files (`brand-voice.md` and the platform-specific profile). If either is missing, abort and tell the user to run `/syndly-setup` first.
 
 ## Pre-flight
 
-1. Check that `~/.syndly/brand-voice.md` exists. If not: stop and say "Run /syndly:setup first to create your brand voice profile."
-2. Check that `~/.syndly/platforms/<platform>.md` exists for the platform the user wants to post to. If not: tell the user `/syndly:setup` covers the platform but they may have skipped it; offer to ask the platform-tone interview questions now and write the file before continuing.
+1. Check that `~/.syndly/brand-voice.md` exists. If not: stop and say "Run /syndly-setup first to create your brand voice profile."
+2. Check that `~/.syndly/platforms/<platform>.md` exists for the platform the user wants to post to. If not: tell the user `/syndly-setup` covers the platform but they may have skipped it; offer to ask the platform-tone interview questions now and write the file before continuing.
 3. Confirm the user is targeting one channel at a time (X, LinkedIn, Facebook — only those platforms have voice profiles per Slice 6A).
 
 ## Workflow — two gates, no shortcuts
@@ -56,4 +56,4 @@ Show the draft. Then offer four paths:
 - Skip either of the two gates. Every drafting flow runs through opinion → approval.
 - Call `schedule_post` without `confirmed: true` and the user's explicit choice of channel + time.
 - Auto-pick a platform. Always confirm which platform and which channel before scheduling.
-- Draft without reading `~/.syndly/brand-voice.md` — the brand voice is the whole point of having run `/syndly:setup`.
+- Draft without reading `~/.syndly/brand-voice.md` — the brand voice is the whole point of having run `/syndly-setup`.

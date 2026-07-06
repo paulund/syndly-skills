@@ -1,11 +1,11 @@
 ---
-name: syndly:queue
+name: syndly-queue
 description: List the current post queue and its status.
 ---
 
 # Queue
 
-Read-only view of what's currently scheduled or queued in Syndly. Use this to check what will go live and when, or to decide whether to back off before running `/syndly:draft` for a new capture.
+Read-only view of what's currently scheduled or queued in Syndly. Use this to check what will go live and when, or to decide whether to back off before running `/syndly-draft` for a new capture.
 
 ## Workflow
 
@@ -34,5 +34,5 @@ Read-only view of what's currently scheduled or queued in Syndly. Use this to ch
 ## Things this skill must NOT do
 
 - Call any mutating MCP tool. Queue is read-only by name.
-- Reorder or modify queued posts. That's `/syndly:draft` or future ops skills.
+- Reorder or modify queued posts. That's `/syndly-draft` or future ops skills.
 - Show drafts that are not yet queued. If the user wants drafts, point them at `~/.syndly/drafts/` directly.

@@ -1,5 +1,5 @@
 ---
-name: syndly:captures
+name: syndly-captures
 description: Show news captures that have arrived since your last check.
 ---
 
@@ -26,7 +26,7 @@ On first run in a session, ensure `~/.syndly/state/` exists (create it if not). 
 
 4. **Offer follow-ups.** After showing the table, offer:
 
-   - "Draft a post from any of these" — hand off to `/syndly:draft` with the chosen capture.
+   - "Draft a post from any of these" — hand off to `/syndly-draft` with the chosen capture.
    - "See all captures (ignoring the cursor)" — useful when the user wants to backfill old content.
    - "Update the cursor without drafting" — advance the timestamp file and end the session.
 
@@ -34,6 +34,6 @@ On first run in a session, ensure `~/.syndly/state/` exists (create it if not). 
 
 ## Things this skill must NOT do
 
-- Call mutating MCP tools (`schedule_post`, `publish_now`, `add_to_queue`, etc.) — drafting and queueing are handled by `/syndly:draft`.
+- Call mutating MCP tools (`schedule_post`, `publish_now`, `add_to_queue`, etc.) — drafting and queueing are handled by `/syndly-draft`.
 - Show captures older than the cursor without an explicit "see all" ask first.
 - Skip the cursor update "to save time." Skipping it means the next run shows everything again and the user loses state.

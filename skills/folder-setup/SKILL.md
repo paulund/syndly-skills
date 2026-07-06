@@ -1,5 +1,5 @@
 ---
-name: syndly:setup
+name: syndly-setup
 description: First-run onboarding. Scaffold ~/.syndly/ and write your brand voice profile plus per-platform tones.
 ---
 
@@ -59,7 +59,7 @@ Walks you through first-run setup of the Syndly skill library on this machine. R
    - Brand voice fields captured
    - Per-platform profiles written / skipped
    - First source added (or skipped)
-   - Reminder: invoke `/syndly:captures` or `/syndly:draft` next time you want to draft a post.
+   - Reminder: invoke `/syndly-captures` or `/syndly-draft` next time you want to draft a post.
 
 ## Things this skill must NOT do
 

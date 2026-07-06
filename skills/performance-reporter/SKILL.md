@@ -1,11 +1,11 @@
 ---
-name: syndly:performance
+name: syndly-performance
 description: Summarise recent post performance with recommendations.
 ---
 
 # Performance
 
-Read-only weekly performance report covering recent Syndly posts. Composes a one-page summary from the analytics resource surfaces, with concrete recommendations the user can act on by hand using `/syndly:draft`.
+Read-only weekly performance report covering recent Syndly posts. Composes a one-page summary from the analytics resource surfaces, with concrete recommendations the user can act on by hand using `/syndly-draft`.
 
 ## Workflow
 
@@ -26,9 +26,9 @@ Read-only weekly performance report covering recent Syndly posts. Composes a one
    - **3 recommendations** — short, actionable, and tied to a specific data point. Never generic ("post more"). Examples of good recs:
      - "Your two highest-engagement LinkedIn posts both opened with a question. Try leading the next 3 posts with a one-line question."
      - "X engagement dropped 30% mid-week — check if scheduling shifted. Consider resuming the morning slot."
-     - "Follower growth on LinkedIn outpaced Facebook 4x. If growth is the goal this quarter, tilt next week's `/syndly:draft` runs toward LinkedIn."
+     - "Follower growth on LinkedIn outpaced Facebook 4x. If growth is the goal this quarter, tilt next week's `/syndly-draft` runs toward LinkedIn."
 
-4. **Honour no-mutation policy.** The report is text only. No mutating tool calls in this skill — the recommendations are advisory, and the user executes them through `/syndly:draft` (which they invoke themselves).
+4. **Honour no-mutation policy.** The report is text only. No mutating tool calls in this skill — the recommendations are advisory, and the user executes them through `/syndly-draft` (which they invoke themselves).
 
 5. **Output.** Render the report inline. If the user asks "give me the raw numbers" or "show me the underlying data", offer to dump the raw JSON of the analytics resources, but never do so unprompted.
 

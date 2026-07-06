@@ -1,5 +1,5 @@
 ---
-name: syndly:sources
+name: syndly-sources
 description: List, create, edit, and remove content sources that Syndly uses to discover news captures.
 ---
 
@@ -32,4 +32,4 @@ When intent is ambiguous, ask one short clarifying question and wait.
 
 - Mutate a source without showing the planned change and waiting for confirmation.
 - Batch-update or batch-delete sources in a single call without listing them one by one for the user.
-- Edit the brand voice profile. That lives under `~/.syndly/brand-voice.md` and is managed by `/syndly:setup`, not here.
+- Edit the brand voice profile. That lives under `~/.syndly/brand-voice.md` and is managed by `/syndly-setup`, not here.
