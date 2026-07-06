@@ -9,13 +9,13 @@ Check the Syndly project for content captures that have arrived since you last l
 
 ## Setup
 
-On first run in a session, ensure `~/.syndly/state/` exists (create it if not). Read or initialise `~/.syndly/state/last-captures-check.txt` with the current ISO timestamp — this is the cursor you advance each time the skill runs.
+On first run in a session, ensure `.syndly/state/` exists (create it if not). Read or initialise `.syndly/state/last-captures-check.txt` with the current ISO timestamp — this is the cursor you advance each time the skill runs.
 
 ## Workflow
 
 1. **List recent captures.** Call the read-only `list_captures` MCP tool, or read the equivalent `syndly://<slug>/sources/<source_id>/captures` resource for each known source — whichever is cheaper. Request the maximum default window so you have a full picture.
 
-2. **Filter to "since last check."** Discard anything with a `published_at` / `captured_at` timestamp older than the value in `~/.syndly/state/last-captures-check.txt`. If the file is missing, treat the run as a first-time check and show everything from the last 7 days.
+2. **Filter to "since last check."** Discard anything with a `published_at` / `captured_at` timestamp older than the value in `.syndly/state/last-captures-check.txt`. If the file is missing, treat the run as a first-time check and show everything from the last 7 days.
 
 3. **Surface the new ones.** Present a compact table to the user:
 
@@ -30,7 +30,7 @@ On first run in a session, ensure `~/.syndly/state/` exists (create it if not). 
    - "See all captures (ignoring the cursor)" — useful when the user wants to backfill old content.
    - "Update the cursor without drafting" — advance the timestamp file and end the session.
 
-5. **Always update the cursor.** At the end of a successful run (whether or not the user drafted anything), overwrite `~/.syndly/state/last-captures-check.txt` with the current ISO timestamp. This is the *completion signal* the skill relies on — never skip it.
+5. **Always update the cursor.** At the end of a successful run (whether or not the user drafted anything), overwrite `.syndly/state/last-captures-check.txt` with the current ISO timestamp. This is the *completion signal* the skill relies on — never skip it.
 
 ## Things this skill must NOT do
 

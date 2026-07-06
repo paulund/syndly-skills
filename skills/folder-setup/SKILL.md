@@ -1,6 +1,6 @@
 ---
 name: syndly-setup
-description: First-run onboarding. Scaffold ~/.syndly/ and write your brand voice profile plus per-platform tones.
+description: First-run onboarding. Scaffold ./.syndly/ at the project root and write your brand voice profile plus per-platform tones.
 ---
 
 # Setup
@@ -9,11 +9,11 @@ Walks you through first-run setup of the Syndly skill library on this machine. R
 
 ## What it does
 
-1. **Check the existing state.** If `~/.syndly/` already exists, ask the user: "The folder already exists. Re-run onboarding (overwrites the brand voice profile) or skip?" Only proceed after confirmation.
+1. **Check the existing state.** `./.syndly/` is project-level — each repository has its own brand voice. If `./.syndly/brand-voice.md` already exists in this project, ask the user: "The folder already exists. Re-run onboarding (overwrites the brand voice profile) or skip?" Only proceed after confirmation.
 
-2. **Create the directory tree.** Run `mkdir -p ~/.syndly/platforms`. Confirm each directory was created.
+2. **Create the directory tree.** Run `mkdir -p ./.syndly/platforms ./.syndly/drafts ./.syndly/state` from the project root. Confirm each directory was created.
 
-3. **Detect the MCP API key.** Look for it in `env` (`SYNDLY_API_KEY` or `SYN_MCP_KEY`). If absent, ask the user to paste it and offer to add a hint to `~/.syndly/README.md` documenting where to put it. **Never persist the key itself to disk under the repo or under `~/.syndly/`.**
+3. **Detect the MCP API key.** Look for it in `env` (`SYNDLY_API_KEY` or `SYN_MCP_KEY`). If absent, ask the user to paste it and offer to add a hint to `.syndly/README.md` documenting where to put it. **Never persist the key itself to disk under the repo or under `.syndly/`.**
 
 4. **Run the brand voice interview.** Ask the user, in this order, one question at a time. Wait for the answer before asking the next.
 
@@ -23,7 +23,7 @@ Walks you through first-run setup of the Syndly skill library on this machine. R
    - "Two phrases to **avoid** (anti-patterns)."
    - "The one thing the brand never does."
 
-5. **Write `~/.syndly/brand-voice.md`.** YAML frontmatter for the structured fields plus a freeform notes section beneath. Example:
+5. **Write `.syndly/brand-voice.md`.** YAML frontmatter for the structured fields plus a freeform notes section beneath. Example:
 
    ```markdown
    ---
@@ -50,12 +50,12 @@ Walks you through first-run setup of the Syndly skill library on this machine. R
    - **LinkedIn**: longer-form, professional but human, leads with insight or story.
    - **Facebook**: conversational, image-forward, community-friendly.
 
-   For each platform the user opts to skip, write a `~/.syndly/platforms/<platform>.md` containing just a one-line note that the platform is intentionally inactive, so future invocations don't ask again.
+   For each platform the user opts to skip, write a `.syndly/platforms/<platform>.md` containing just a one-line note that the platform is intentionally inactive, so future invocations don't ask again.
 
 7. **(Optional) Add the first source.** Ask: "Add a first content source now? (URL or RSS feed)" If yes, look up the relevant MCP tool name (start with `list_sources` to confirm connectivity, then call the add-source tool the server exposes). Always show the user what's about to be added and wait for confirmation before invoking any mutating tool.
 
 8. **Print the summary.** Confirm:
-   - Path to `~/.syndly/`
+   - Path to `.syndly/`
    - Brand voice fields captured
    - Per-platform profiles written / skipped
    - First source added (or skipped)
@@ -63,6 +63,6 @@ Walks you through first-run setup of the Syndly skill library on this machine. R
 
 ## Things this skill must NOT do
 
-- Write the MCP API key to any file under `~/.syndly/` or anywhere else.
+- Write the MCP API key to any file under `.syndly/` or anywhere else.
 - Invoke mutating MCP tools (anything that creates / updates / removes a row) without showing the user the planned change and waiting for explicit confirmation.
 - Skip past the brand voice interview even if the user seems impatient. This document is the foundation the rest of the library reads from.

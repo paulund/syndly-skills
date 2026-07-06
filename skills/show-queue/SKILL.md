@@ -35,4 +35,4 @@ Read-only view of what's currently scheduled or queued in Syndly. Use this to ch
 
 - Call any mutating MCP tool. Queue is read-only by name.
 - Reorder or modify queued posts. That's `/syndly-draft` or future ops skills.
-- Show drafts that are not yet queued. If the user wants drafts, point them at `~/.syndly/drafts/` directly.
+- Show drafts that are not yet queued. If the user wants drafts, point them at `.syndly/drafts/` directly.

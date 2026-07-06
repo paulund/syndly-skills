@@ -14,7 +14,7 @@ This installs every skill in the library into your agent's skills directory. Aft
 
 | Invocation            | What it does                                                                                                                                              |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/syndly-setup`       | First-run onboarding. Scaffolds `~/.syndly/`, walks the brand-voice profile interview, writes per-platform tones.                                          |
+| `/syndly-setup`       | First-run onboarding. Scaffolds `./.syndly/` at the project root, walks the brand-voice profile interview, writes per-platform tones.                   |
 | `/syndly-sources`     | List, create, edit, and remove content sources (RSS feeds, sitemaps) that supply news captures.                                                           |
 | `/syndly-captures`    | Show news captures that have arrived since your last check.                                                                                               |
 | `/syndly-draft`       | Pick a capture → your angle → draft a post in your brand voice and the target platform voice → enqueue on approval. End-to-end.                            |
@@ -25,7 +25,18 @@ Run `/syndly-setup` first — it creates the brand-voice profile that the daily-
 
 ## Naming convention
 
-All skills in this library are hyphen-namespaced under `syndly-` (e.g. `syndly-setup`, `syndly-draft`). The directory name and the frontmatter `name:` field must match exactly. Earlier versions used colon-namespacing (`syndly:setup`), but several skills.sh-compatible agents do not parse colons in the `name` field, so the skill silently fails to load. See `CONTRIBUTING.md` for the migration note.
+All skills in this library are hyphen-namespaced under `syndly-` (e.g. `syndly-setup`, `syndly-draft`). The directory name and the frontmatter `name:` field must match exactly.
+
+## Project-level state
+
+All brand voice, platform tones, drafts, and skill state live in `./.syndly/` at the project root. Each project gets its own voice profile; brand voice and platform profiles are version-controlled, drafts and cursor state are ephemeral and should be in `.gitignore`.
+
+Typical `.gitignore` entries:
+
+```
+.syndly/drafts/
+.syndly/state/
+```
 
 ## License
 

@@ -37,10 +37,6 @@ should use while following the skill.
 - **Description** must be a single complete sentence. It surfaces in the agent's skill discovery UI.
 - **Body** is markdown. Use imperative voice ("Check that X exists", "Ask the user for Y", "On approval, call tool Z"). Where the skill uses destructive MCP tools, gate the call behind a clear user-confirmation step.
 
-## Migration note
-
-Earlier versions of this library declared skills with colon-namespaced names (e.g. `name: syndly:setup`). Several skills.sh-compatible agents — including recent OpenCode versions — do not parse colons in the `name` field, so the skill silently fails to load. The convention changed to hyphen-namespacing on 2026-07-06. Update your `SKILL.md` frontmatter to match.
-
 ## Adding a new skill
 
 1. Create `skills/syndly-<your-role>/SKILL.md`.
