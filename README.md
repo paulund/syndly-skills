@@ -1,6 +1,6 @@
 # syndly-skills
 
-Pre-built agent skills that wrap [Syndly](https://github.com/PaulundOrg/socialqueue) MCP tools into reusable social media workflows. Install the whole library in one command, then invoke each skill as `/syndly-<role>` in Claude Code (or any skills.sh-compatible agent).
+Pre-built agent skills that wrap [Syndly](https://github.com/PaulundOrg/socialqueue) MCP tools into reusable social media workflows. Install the whole library in one command, then invoke any skill as `/syndly-<role>` in Claude Code (or any skills.sh-compatible agent). For MCP API reference and error interpretation, see `/syndly-help`.
 
 ## Install
 
@@ -20,6 +20,7 @@ This installs every skill in the library into your agent's skills directory. Aft
 | `/syndly-draft`       | Pick a capture → your angle → draft a post in your brand voice and the target platform voice → enqueue on approval. End-to-end.                            |
 | `/syndly-queue`       | List the scheduled and queued posts across channels, with status, target channel, and scheduled time.                                                     |
 | `/syndly-performance` | Summarise recent post performance — top posts, channel-level engagement, follower deltas — and surface recommendations.                                   |
+| `/syndly-help`        | Read-only reference for the MCP API. Surfaces the live tool list, lists projects/sources/posts on demand, interprets common MCP errors. Read-only.        |
 
 Run `/syndly-setup` first — it creates the brand-voice profile that the daily-use skills (`draft`, `performance`) read from.
 
